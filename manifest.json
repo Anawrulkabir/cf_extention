@@ -1,0 +1,27 @@
+{
+  "name": "Codeforces Submit",
+  "version": "1.0",
+  "description": "Submit code directly from your IDE to Codeforces",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://codeforces.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://codeforces.com/problemset/*",
+        "http://codeforces.com/contest/*",
+        "https://codeforces.com/problemset/*",
+        "https://codeforces.com/contest/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
